@@ -271,9 +271,9 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>wagon-maven-plugin</artifactId>
-				<version>1.0</version>
+			    <groupId>org.codehaus.mojo</groupId>
+			    <artifactId>wagon-maven-plugin</artifactId>
+			    <version>1.0</version>
 				<configuration>
 					<fromFile>target/${pack-name}</fromFile>
 					<url><![CDATA[scp://${remote-username}:${remote-passwd}@${remote-addr}${service-path}]]></url>
@@ -317,29 +317,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<repositories>
-		<repository>
-			<id>public</id>
-			<name>aliyun nexus</name>
-			<url>https://maven.aliyun.com/repository/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>public</id>
-			<name>aliyun nexus</name>
-			<url>https://maven.aliyun.com/repository/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
 
 </project>
