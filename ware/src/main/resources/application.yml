@@ -1,4 +1,9 @@
+server:
+  port: 8200
+
 spring:
+  application:
+    name: ware
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mall_wms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
@@ -8,9 +13,6 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-  application:
-    name: ware
-
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
@@ -18,6 +20,3 @@ mybatis-plus:
     db-config:
       # 开启主键自增
       id-type: auto
-
-server:
-  port: 8200

@@ -1,3 +1,6 @@
+server:
+  port: 8090
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -17,6 +20,3 @@ mybatis-plus:
     db-config:
       # 开启主键自增
       id-type: auto
-
-server:
-  port: 8090
