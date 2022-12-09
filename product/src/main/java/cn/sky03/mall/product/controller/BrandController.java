@@ -1,21 +1,16 @@
 package cn.sky03.mall.product.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import cn.sky03.mall.product.entity.BrandEntity;
-import cn.sky03.mall.product.service.BrandService;
 import cn.sky03.common.utils.PageUtils;
 import cn.sky03.common.utils.R;
+import cn.sky03.common.valid.AddGroup;
+import cn.sky03.mall.product.entity.BrandEntity;
+import cn.sky03.mall.product.service.BrandService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
-
+import java.util.Arrays;
+import java.util.Map;
 
 /**
  * 品牌
@@ -56,12 +51,11 @@ public class BrandController {
     /**
      * 保存
      */
-    @RequestMapping("/save")
+    @PostMapping("/save")
     //@RequiresPermissions("product:brand:save")
-    public R save(@RequestBody BrandEntity brand){
-		brandService.save(brand);
-
-        return R.ok();
+    public R save(@Validated(AddGroup.class) @RequestBody BrandEntity brand){
+            brandService.save(brand);
+            return R.ok();
     }
 
     /**
